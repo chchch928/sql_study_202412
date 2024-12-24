@@ -24,7 +24,7 @@ FROM EMPLOYEES
 -- 4. employees테이블의 사원정보를 first_name + last_name + '의 급여는 $' + salary + '입니다.' 
 --    의 형태로 연결하여 '사원정보' 라는 별칭을 부여하여 하나의 컬럼으로 조회하세요.
 SELECT 
-    first_name || last_name || '의 급여는' || salary || '입니다' AS "사원정보"
+    first_name || last_name || '의 급여는 $' || salary || '입니다' AS "사원정보"
 
 FROM EMPLOYEES
 ;
@@ -65,7 +65,7 @@ SELECT
     first_name,
     salary
 FROM EMPLOYEES
-WHERE salary > 10000 AND salary < 12000
+WHERE salary BETWEEN 10000 AND 12000
 ;
 
 -- 5. employees테이블에서 manager_id가 101, 102, 103중에 속하는 사원의 first_name, salary, manager_id를 조회하세요.
