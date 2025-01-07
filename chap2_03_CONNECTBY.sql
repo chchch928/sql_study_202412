@@ -1,6 +1,5 @@
 
--- 사번이 자식이고 상사사번이 부모이다.
--- 
+-- 이 SELECT문에서 사번이 자식이고 상사사번이 부모이다.
 
 SELECT
     emp_no
@@ -27,7 +26,6 @@ SELECT
 FROM tb_emp A
 JOIN tb_dept B
 ON A.dept_cd = B.dept_cd
-
  START WITH A.direct_manager_emp_no IS NULL -- LEVEL 1을 결정하는 것
 -- START WITH A.emp_no = 1000000001
 CONNECT BY PRIOR A.emp_no = A.direct_manager_emp_no
